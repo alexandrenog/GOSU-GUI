@@ -13,10 +13,10 @@ class Calculator < Gosu::Window
 		@buttons=[]
 		@tf1=GosuTextField.new(self,[x2,y1],[width/3+10,30],"",true,10,textfieldColor,textfieldFontColor)
 		@tf2=GosuTextField.new(self,[x2,y1+ydif2],[width/3+10,30],"",true,10,textfieldColor,textfieldFontColor)
-		@buttons<<GosuButton.new(self,[x1,y1],[width/3,30],"Add",lambda{|window| window.assign window.tf1.to_f+window.tf2.to_f},nil,buttonColor,buttonFontColor)
-		@buttons<<GosuButton.new(self,[x1,y1+ydif1],[width/3,30],"Subtract",lambda{|window| window.assign window.tf1.to_f-window.tf2.to_f},nil,buttonColor,buttonFontColor)
-		@buttons<<GosuButton.new(self,[x1,y1+ydif1*2],[width/3,30],"Multiply",lambda{|window| window.assign window.tf1.to_f*window.tf2.to_f},nil,buttonColor,buttonFontColor)
-		@buttons<<GosuButton.new(self,[x1,y1+ydif1*3],[width/3,30],"Divide",lambda{|window| window.assign window.tf1.to_f/window.tf2.to_f},nil,buttonColor,buttonFontColor)
+		@buttons << GosuButton.new(self,[x1,y1],[width/3,30],"Add",lambda{|window| window.assign window.tf1.to_f+window.tf2.to_f},nil,buttonColor,buttonFontColor)
+		@buttons << GosuButton.new(self,[x1,y1+ydif1],[width/3,30],"Subtract",lambda{|window| window.assign window.tf1.to_f-window.tf2.to_f},nil,buttonColor,buttonFontColor)
+		@buttons << GosuButton.new(self,[x1,y1+ydif1*2],[width/3,30],"Multiply",lambda{|window| window.assign window.tf1.to_f*window.tf2.to_f},nil,buttonColor,buttonFontColor)
+		@buttons << GosuButton.new(self,[x1,y1+ydif1*3],[width/3,30],"Divide",lambda{|window| window.assign window.tf1.to_f/window.tf2.to_f},nil,buttonColor,buttonFontColor)
 		@labelResult=GosuLabel.new(self,[x2-10,y1+ydif2*2],[width/3+10,30],"",false,14)
 		@labelTitle=GosuLabel.new(self,[ytitle,xtitle],[width/2,40],self.caption,false)
 		@inputhandler=GosuInputHandler.new(self) #must be named "inputhandler" to work properly on button events' overwriting, equivalent to this a GosuTextInput should be named textinput
